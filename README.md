@@ -2,12 +2,6 @@
 
 NCTF 2023 题目和 Writeup
 
-题目部分文件使用了 Git LFS 进行存储, 请自行安装, 然后再 clone 本项目
-
-```bash
-git clone https://github.com/X1cT34m/NCTF2023
-```
-
 |  方向   |      题目名称      |   出题人   |
 | :-----: | :----------------: | :--------: |
 |   Web   |      logging       |   X1r0z    |
