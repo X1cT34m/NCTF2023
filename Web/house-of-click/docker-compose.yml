@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  frontend:
+    image: nginx:1.21.0
+    restart: always
+    ports:
+      - "8013:80"
+    volumes:
+      - ./frontend/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - default
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    restart: always
+    networks:
+      - default
+      - inter
+    depends_on:
+      - db
+  
+  db:
+    image: clickhouse/clickhouse-server
+    environment:
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=default
+    volumes:
+      - ./db/:/docker-entrypoint-initdb.d/
+    networks:
+      - inter
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+
+  inter:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

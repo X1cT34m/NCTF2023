@@ -1,0 +1,8 @@
+version: '3'
+services:
+  checkin:
+    image: "nctf2023:checkin"
+    restart: always
+    container_name: nctf2023-checkin
+    ports:
+      - "58002:9999"

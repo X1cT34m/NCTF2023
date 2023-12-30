@@ -1,0 +1,6 @@
+services:
+  code_infinite:
+    build: .
+    privileged: true
+    ports:
+      - "11112:5000"

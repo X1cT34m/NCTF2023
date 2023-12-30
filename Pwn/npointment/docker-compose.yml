@@ -1,0 +1,8 @@
+version: '3'
+services:
+  npointment:
+    image: "nctf2023:npointment"
+    restart: always
+    container_name: nctf2023-npointment
+    ports:
+      - "58001:9999"

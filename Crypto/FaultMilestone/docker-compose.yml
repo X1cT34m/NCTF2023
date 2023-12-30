@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  faultmilestone:
+    build: .
+    ports:
+      - 11113:5000
+    privileged: true

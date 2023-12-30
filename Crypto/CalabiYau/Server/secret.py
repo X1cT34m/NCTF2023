@@ -1,0 +1,1 @@
+flag = b"NCTF{116be05e-9fc9-11ee-8f99-b025aa41becb}"

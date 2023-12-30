@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  steinsgate:
+    build: .
+    ports:
+      - 11111:5000
+    privileged: true
